@@ -1,6 +1,10 @@
 # rust-practice
 code for learning rust
 
-## [template]
+## Random
 
-[info]
+Random number generator
+maybe some random number game exercises?
+- number guessing
+- rock, paper, scissors
+- insults

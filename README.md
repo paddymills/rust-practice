@@ -8,6 +8,7 @@ each branch will be a different program
 ## Simple
 - random number
 - file parsing
+- average number
 - string manipulation
 - palindrome
 - count vowels/words
@@ -18,8 +19,17 @@ each branch will be a different program
 - system monitors (e.g. bandwidth)
 - port scanner
 - terminal cli interface
+- web requests (graqhql?)
 
 ## From CompSci
-- list sorting
+- sorting algorithms
 - prime factor (don't forget sieve of eratosthenes)
 - factorial
+
+# General topic ideas
+to be developed into ideas at some point, but I need more direction
+
+- web server
+- FFI
+- compression/cryptography/encryption
+- threading/concurrency

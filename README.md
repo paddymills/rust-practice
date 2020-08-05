@@ -7,7 +7,7 @@ each branch will be a different program
 
 ## Easy
 - [x] random number
-- [ ] average number
+- [x] average number
 - [ ] palindrome
 - [ ] count vowels/words
 - [ ] string manipulation

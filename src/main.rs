@@ -38,7 +38,7 @@ fn main() {
 
     println!("numbers: {:?}", numbers);
     if opt.int {
-        println!("average: {}", avg as isize);
+        println!("average: {}", avg.round());
     } else {
         println!("average: {}", avg);
     }

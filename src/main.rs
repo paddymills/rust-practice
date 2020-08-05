@@ -1,13 +1,16 @@
 use std::io;
 use std::io::prelude::*;
+use std::iter::Sum;
 use std::str::FromStr;
 
 // cli to use a number file?
 
 fn main() {
     let numbers = get_numbers_from_user::<f64>().unwrap();
+    let sum: f64 = Sum::sum(numbers.iter());
 
     println!("numbers: {:?}", numbers);
+    println!("average: {}", sum / numbers.len() as f64)
 }
 
 fn get_numbers_from_user<T: FromStr>() -> io::Result<Vec<T>> {
@@ -21,7 +24,6 @@ fn get_numbers_from_user<T: FromStr>() -> io::Result<Vec<T>> {
         match io::stdin().read_line(&mut input) {
             Ok(_) => {
                 let num = input.trim_end();
-                println!("String: :{}:", num);
 
                 if num == "" {
                     break;

@@ -12,6 +12,8 @@ each branch will be a different program
 - string manipulation
 - palindrome
 - count vowels/words
+- necklace counting (from [r/dailyprogrammer](https://www.reddit.com/r/dailyprogrammer/comments/g1xrun/20200415_challenge_384_intermediate_necklace/))
+- morse code translator
 
 ## Medium
 - packet sniffer
@@ -19,7 +21,6 @@ each branch will be a different program
 - port scanner
 - terminal cli interface
 - web requests (graqhql?)
-- necklace counting (from [r/dailyprogrammer](https://www.reddit.com/r/dailyprogrammer/comments/g1xrun/20200415_challenge_384_intermediate_necklace/))
 - knight's tour (from [r/dailyprogrammer](https://www.reddit.com/r/dailyprogrammer_ideas/comments/b29bro/intermediate_knights_tour/))
 
 ## From CompSci

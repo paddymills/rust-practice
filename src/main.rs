@@ -1,6 +1,6 @@
 use std::fs::File;
 use std::io;
-use std::io::prelude::*;
+use std::io::Write; // required to flush stdout
 use std::iter::Sum;
 use std::path::PathBuf;
 use std::str::FromStr;
@@ -13,6 +13,9 @@ struct Cli {
     /// Input file
     #[structopt(parse(from_os_str))]
     file: Option<PathBuf>,
+    /// print average as whole number
+    #[structopt(short, long)]
+    int: bool,
 }
 
 enum LineResult<T> {
@@ -31,9 +34,14 @@ fn main() {
     };
 
     let sum: NumType = Sum::sum(numbers.iter());
+    let avg = sum / numbers.len() as NumType;
 
     println!("numbers: {:?}", numbers);
-    println!("average: {}", sum / numbers.len() as NumType)
+    if opt.int {
+        println!("average: {}", avg as isize);
+    } else {
+        println!("average: {}", avg);
+    }
 }
 
 fn get_numbers_from_user<T: FromStr>() -> io::Result<Vec<T>> {
@@ -41,7 +49,7 @@ fn get_numbers_from_user<T: FromStr>() -> io::Result<Vec<T>> {
 
     loop {
         print!("Enter a number: ");
-        io::stdout().flush().unwrap();
+        let _ = io::stdout().flush();
 
         match read_and_parse_number(&mut io::stdin().lock()) {
             LineResult::Number(n) => numbers.push(n),

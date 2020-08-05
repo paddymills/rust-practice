@@ -1,3 +1,3 @@
-# __exercise__
+# average
 
-__about__
+find the average number in a list of numbers

@@ -90,15 +90,15 @@ fn read_and_parse_number<T: FromStr>(reader: &mut dyn io::BufRead) -> LineResult
     match reader.read_line(&mut line) {
         Ok(0) => LineResult::StopIteration,
         Ok(_) => {
-            let num = line.trim_end();
+            let trimmed = line.trim_end();
 
-            match num.parse::<T>() {
+            match trimmed.parse::<T>() {
                 Ok(n) => LineResult::Number(n),
                 Err(_) => {
-                    if num == "" {
+                    if trimmed == "" {
                         LineResult::StopIteration
                     } else {
-                        LineResult::SkipLine(line)
+                        LineResult::SkipLine(String::from(trimmed))
                     }
                 }
             }
@@ -106,6 +106,44 @@ fn read_and_parse_number<T: FromStr>(reader: &mut dyn io::BufRead) -> LineResult
         Err(error) => {
             println!("io read error: {}", error);
             LineResult::StopIteration
+        }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::matches;
+
+    #[test]
+    fn test_file() {
+        let file = PathBuf::from_str("numbers.txt").unwrap();
+
+        assert_eq!(
+            get_numbers_from_file::<f64>(file).unwrap(),
+            vec![1.0, 2.2, 3.0, 9.0]
+        );
+    }
+
+    #[test]
+    fn test_reads() {
+        let file = PathBuf::from_str("numbers.txt").unwrap();
+        let f = File::open(file).unwrap();
+        let mut reader = io::BufReader::new(f);
+
+        let mut expected_results: Vec<LineResult<f64>> = Vec::with_capacity(6);
+        expected_results.push(LineResult::Number(1.0));
+        expected_results.push(LineResult::Number(2.2));
+        expected_results.push(LineResult::SkipLine(String::from("a")));
+        expected_results.push(LineResult::Number(3.0));
+        expected_results.push(LineResult::Number(9.0));
+        expected_results.push(LineResult::StopIteration);
+
+        for _expected_result in expected_results {
+            assert!(matches!(
+                read_and_parse_number::<f64>(&mut reader),
+                _expected_result
+            ));
         }
     }
 }

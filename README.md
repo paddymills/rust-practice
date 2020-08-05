@@ -27,13 +27,13 @@ each branch will be a different program
 - [ ] prime factor (don't forget sieve of eratosthenes)
 - [ ] factorial
 - [ ] searching algorithms
-  - linear
-  - binary
+  - [ ] linear
+  - [ ] binary
 - [ ] sorting algorithms
-  - bubble
-  - selection
-  - insertion
-  - shell
+  - [ ] bubble
+  - [ ] selection
+  - [ ] insertion
+  - [ ] shell
 
 # General topic ideas
 to be developed into ideas at some point, but I need more direction

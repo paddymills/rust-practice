@@ -1,3 +1,3 @@
-# __exercise__
+# palindrome
 
-__about__
+tell whether or not a string is a palindrom

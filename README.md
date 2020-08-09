@@ -1,3 +1,3 @@
-# __exercise__
+# Count vowels/words
 
-__about__
+count vowels and/or words form user input

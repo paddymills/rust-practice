@@ -5,11 +5,15 @@ each branch will be a different program
 
 # Ideas
 
-## Easy
+## Numbers/Math
 - [x] random number
 - [x] average number
+- [ ] prime factor (don't forget sieve of eratosthenes)
+- [ ] factorial
+
+## Strings
 - [x] palindrome
-- [ ] count vowels/words
+- [x] count vowels/words
 - [ ] string manipulation
 - [ ] file parsing
 - [ ] morse code translator
@@ -24,8 +28,6 @@ each branch will be a different program
 - [ ] knight's tour (from [r/dailyprogrammer](https://www.reddit.com/r/dailyprogrammer_ideas/comments/b29bro/intermediate_knights_tour/))
 
 ## Exercises from Computer Science classes
-- [ ] prime factor (don't forget sieve of eratosthenes)
-- [ ] factorial
 - [ ] searching algorithms
   - [ ] linear
   - [ ] binary

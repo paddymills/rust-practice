@@ -45,3 +45,4 @@ to be developed into ideas at some point, but I need more direction
 - [ ] GUI (terminal, X, win?)
 - [ ] compression/cryptography/encryption
 - [ ] threading/concurrency
+- [ ] WASM

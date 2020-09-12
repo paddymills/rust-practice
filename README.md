@@ -8,7 +8,7 @@ each branch will be a different program
 ## Numbers/Math
 - [x] random number
 - [x] average number
-- [ ] prime factor (don't forget sieve of eratosthenes)
+- [x] prime factor (don't forget sieve of eratosthenes)
 - [ ] factorial
 
 ## Strings

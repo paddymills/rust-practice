@@ -1,3 +1,3 @@
-# __exercise__
+# Prime Numbers
 
-__about__
+Simple program to list primes

@@ -1,3 +1,4 @@
-# __exercise__
+# factorial
 
-__about__
+factorial generator:
+Calculates the product of all numbers from 1 to the given number

@@ -1,9 +1,17 @@
+#![feature(int_error_matching)]
+
 use std::io;
 use std::io::prelude::Write;
 use std::num::IntErrorKind;
 
 fn main() -> io::Result<()> {
-    let num = input();
+    match input() {
+        Ok(0) => println!("Aborting..."),
+        Ok(num) => println!("{:}! = {:}", num, factorial(num)),
+        Err(_) => println!("Aborting..."),
+    }
+
+    println!("{}", factorial(5));
 
     Ok(())
 }
@@ -21,13 +29,11 @@ fn input() -> io::Result<i32> {
         stdin.read_line(&mut input)?;
         match input.trim().parse::<i32>() {
             Ok(number) => println!("n= {}", number),
-            Err(e) => {
-                println!("err: {:?}", e);
-                match e.kind() {
-                    IntErrorKind::Empty => println!("Empty string, abort!"),
-                    IntErrorKind::InvalidDigit => println!("not a number"),
-                }
-            }
+            Err(e) => match e.kind() {
+                IntErrorKind::Empty => println!("Empty string, abort!"),
+                IntErrorKind::InvalidDigit => println!("not a number"),
+                _ => println!("err: {:?}", e),
+            },
         };
 
         iters += 1;
@@ -37,4 +43,11 @@ fn input() -> io::Result<i32> {
     }
 
     Ok(0)
+}
+
+fn factorial(num: i32) -> i32 {
+    match num {
+        1 => 1,
+        _ => num * factorial_functional(num - 1),
+    }
 }

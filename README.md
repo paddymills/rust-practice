@@ -9,7 +9,7 @@ each branch will be a different program
 - [x] random number
 - [x] average number
 - [x] prime factor (don't forget sieve of eratosthenes)
-- [ ] factorial
+- [x] factorial
 
 ## Strings
 - [x] palindrome

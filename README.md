@@ -1,3 +1,10 @@
-# __exercise__
+# Searching and Sorting Algorithms
 
-__about__
+- Search
+  - Binary
+  - Linear
+- Sort
+  - Bubble
+  - Selection
+  - Insertion
+  - Shell
